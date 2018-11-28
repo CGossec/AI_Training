@@ -27,13 +27,6 @@ class Individual
         int chromosome[TARGET_SIZE];
         int fitness;
 
-        Individual(int chro[TARGET_SIZE])
-        {
-            for (int i = 0; i < TARGET_SIZE; i++)
-                this->chromosome[i] = chro[i];
-            this->fitness = get_fitness();
-        }
-
         Individual()
         {
             int child_chrom[TARGET_SIZE] =
@@ -45,6 +38,13 @@ class Individual
             this->chromosome[0] = child_chrom[0];
             this->chromosome[1] = child_chrom[1];
             this->chromosome[2] = child_chrom[2];
+            this->fitness = get_fitness();
+        }
+
+        Individual(int chro[TARGET_SIZE])
+        {
+            for (int i = 0; i < TARGET_SIZE; i++)
+                this->chromosome[i] = chro[i];
             this->fitness = get_fitness();
         }
 
